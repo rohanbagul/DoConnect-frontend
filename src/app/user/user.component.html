@@ -1,0 +1,81 @@
+<div class="holder"> 
+  <div class="sub-nav">
+    <div class=" chat ">
+      <button
+        class="btn logout-button"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+        
+      >
+        Chat
+      </button>
+    </div>
+    <span class="page-heading">
+      Welcome {{ user.name }}
+    </span>
+    <span class="log-out">
+      <a
+    routerLink="/ask-question"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+
+    <button class="btn q-button" id="ask">Ask Question</button>
+  </a>
+      <button
+        class="btn logout-button"
+        (click)="userLogout(user.id)"
+        type="button"
+      >
+        LogOut
+      </button> 
+    </span> 
+  </div>
+<hr>
+<!-- <div class="container">
+  <a
+    routerLink="/ask-question"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+
+    <button class="btn q-button" id="ask">Ask Question</button>
+  </a>
+  <br />
+</div> -->
+<hr>
+<app-all-questions></app-all-questions>
+<br />
+<!-- <div class="container float-right">
+  <button
+    class="btn btn-outline"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight"
+    id="btn-chat"
+  >
+    Chat
+  </button>
+</div> -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-chat></app-chat>
+  </div>
+</div>
+</div>

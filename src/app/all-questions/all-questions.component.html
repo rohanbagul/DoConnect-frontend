@@ -1,0 +1,46 @@
+<br />
+<nav class="navbar">
+  <div class="container-fluid">
+    <button (click)="getQuestions('All')" class="btn q-button">
+      All
+    </button>
+    <button (click)="getQuestions('Java')" class="btn q-button">
+      Java
+    </button>
+    <button (click)="getQuestions('Python')" class="btn q-button">
+      Python
+    </button>
+    <button (click)="getQuestions('Cloud')" class="btn q-button">
+      Cloud
+    </button>
+    <button (click)="getQuestions('Others')" class="btn q-button">
+      Others
+    </button>
+  </div>
+</nav>
+<div class="my-3">
+  <table class="container-question">
+    <tr>
+      <th class="col-1-heading">Question</th>
+      <th>Posted By</th>
+      <th>Topic</th>
+      <th>Get Answers</th>
+    </tr>
+
+    <tr *ngFor="let question of questions">
+      <td class="col-1">{{ question.question }}</td>
+      <td class="col-2">{{ question.user.name }}</td>
+      <td class="col-3">{{ question.topic }}</td>
+
+      <td>
+        <button
+          class="btn q-button"
+          id="{{ question.id }}"
+          (click)="sendQuestionToGetAnswer(question.id)"
+        >
+          Get Answers
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
